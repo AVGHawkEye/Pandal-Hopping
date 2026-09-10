@@ -27,17 +27,16 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
 
-      - name: Grant Execute Permission for Gradlew
-        run: chmod +x gradlew
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Inject Google Maps API Key
         run: |
           echo "MAPS_API_KEY=${{ secrets.MAPS_API_KEY }}" >> local.properties
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Create GitHub Release & Upload APK
         uses: softprops/action-gh-release@v2
