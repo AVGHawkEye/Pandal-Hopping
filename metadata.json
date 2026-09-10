@@ -1,0 +1,6 @@
+{
+  "name": "Pandal Hopper",
+  "description": "Explore pandals, plan walking routes, sync with Firestore & Auth, and discover real-world locations with Google Maps & Gemini Intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
